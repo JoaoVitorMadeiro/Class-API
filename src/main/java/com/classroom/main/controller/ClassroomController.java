@@ -2,8 +2,8 @@ package com.classroom.main.controller;
 
 import com.classroom.main.controller.dto.ClassroomDTO;
 import com.classroom.main.controller.dto.CreateClassroomDTO;
-import com.classroom.main.model.Classroom;
-import com.classroom.main.model.Teacher;
+import com.classroom.main.entity.Classroom;
+import com.classroom.main.entity.Teacher;
 import com.classroom.main.service.ClassroomService;
 import com.classroom.main.service.TeacherService;
 import io.swagger.v3.oas.annotations.tags.Tag;

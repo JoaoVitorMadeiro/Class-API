@@ -1,9 +1,10 @@
 package com.classroom.main.controller.dto;
 
 
-import com.classroom.main.model.Classroom;
-import com.classroom.main.model.Teacher;
-import com.classroom.main.model.Utils.Turn;
+import com.classroom.main.entity.Classroom;
+import com.classroom.main.entity.Teacher;
+import com.classroom.main.entity.Utils.Turn;
+
 import lombok.*;
 
 @Getter

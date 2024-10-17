@@ -2,7 +2,7 @@ package com.classroom.main.service;
 
 import com.classroom.main.controller.dto.CreateTeacherDTO;
 import com.classroom.main.controller.dto.TeacherDto;
-import com.classroom.main.model.Teacher;
+import com.classroom.main.entity.Teacher;
 import com.classroom.main.repository.TeacherRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

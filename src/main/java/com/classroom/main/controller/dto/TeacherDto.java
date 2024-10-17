@@ -1,9 +1,10 @@
 package com.classroom.main.controller.dto;
 
-import com.classroom.main.model.Teacher;
 import lombok.*;
 
 import java.time.LocalDateTime;
+
+import com.classroom.main.entity.Teacher;
 
 @Setter
 @Getter

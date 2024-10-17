@@ -2,16 +2,14 @@ package com.classroom.main.service;
 
 import com.classroom.main.controller.dto.ClassroomDTO;
 import com.classroom.main.controller.dto.CreateClassroomDTO;
-import com.classroom.main.model.Classroom;
+import com.classroom.main.entity.Classroom;
 import com.classroom.main.repository.ClassroomRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
-import static com.classroom.main.model.Utils.Turn.Morning;
-import static com.classroom.main.model.Utils.Turn.Night;
-import static org.junit.jupiter.api.Assertions.*;
+import static com.classroom.main.entity.Utils.Turn.Morning;
 import static org.mockito.ArgumentMatchers.any;
 
 class ClassroomServiceTest {

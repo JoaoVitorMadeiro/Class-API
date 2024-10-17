@@ -2,7 +2,7 @@ package com.classroom.main.service;
 
 import com.classroom.main.controller.dto.ClassroomDTO;
 import com.classroom.main.controller.dto.CreateClassroomDTO;
-import com.classroom.main.model.Classroom;
+import com.classroom.main.entity.Classroom;
 import com.classroom.main.repository.ClassroomRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -16,7 +16,7 @@ public class ClassroomService {
 
     private final ClassroomRepository classroomRepository;
     private final TeacherService teacherService;
-    private ClassroomDTO ClassroomDTO;
+
 
     public ClassroomService(ClassroomRepository classroomRepository, TeacherService teacherService) {
         this.classroomRepository = classroomRepository;

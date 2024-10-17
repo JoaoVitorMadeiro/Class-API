@@ -2,7 +2,7 @@ package com.classroom.main.controller;
 
 import com.classroom.main.controller.dto.CreateTeacherDTO;
 import com.classroom.main.controller.dto.TeacherDto;
-import com.classroom.main.model.Teacher;
+import com.classroom.main.entity.Teacher;
 import com.classroom.main.service.TeacherService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

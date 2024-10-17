@@ -1,4 +1,4 @@
-package com.classroom.main.model.Utils;
+package com.classroom.main.entity.Utils;
 
 public enum Turn {
     Morning,

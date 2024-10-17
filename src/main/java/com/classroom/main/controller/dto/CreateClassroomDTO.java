@@ -1,10 +1,8 @@
 package com.classroom.main.controller.dto;
 
-import com.classroom.main.model.Utils.Turn;
-
+import com.classroom.main.entity.Utils.Turn;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 

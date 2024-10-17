@@ -2,7 +2,7 @@ package com.classroom.main.controller;
 
 import com.classroom.main.controller.dto.CreateTeacherDTO;
 import com.classroom.main.controller.dto.TeacherDto;
-import com.classroom.main.model.Teacher;
+import com.classroom.main.entity.Teacher;
 import com.classroom.main.service.TeacherService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
