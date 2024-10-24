@@ -31,7 +31,7 @@ class TeacherControllerTest {
     }
 
     @Test
-    void mostrarTodosOsProfessores() {
+    void getAllTeachers() {
         Teacher teacher1 = new Teacher();
         Teacher teacher2 = new Teacher();
         List<Teacher> teachers = Arrays.asList(teacher1, teacher2);
@@ -45,7 +45,7 @@ class TeacherControllerTest {
     }
 
     @Test
-    void retornaOProfessorDeAcordoComOId() {
+    void getTeacherById() {
         Teacher teacher = new Teacher();
         when(teacherService.getTeacherById(1L)).thenReturn(teacher);
 
