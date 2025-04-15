@@ -26,6 +26,11 @@ const ClassroomForm = () => {
     school_segment: '',
     turn: Turn.Morning,
     id_teacher: 0,
+    createdDate: '',
+    updatedDate: '',
+    active: true,
+    teacher: null,
+    students: []
   });
 
   useEffect(() => {
@@ -41,6 +46,11 @@ const ClassroomForm = () => {
             school_segment: classroomData.school_segment,
             turn: classroomData.turn,
             id_teacher: classroomData.id_teacher,
+            createdDate: classroomData.createdDate,
+            updatedDate: classroomData.updatedDate,
+            active: classroomData.active,
+            teacher: classroomData.teacher,
+            students: classroomData.students
           });
         }
       } catch (error) {
@@ -59,9 +69,21 @@ const ClassroomForm = () => {
         await classroomService.update(Number(id), {
           ...formData,
           id: Number(id),
+          createdDate: new Date().toISOString(),
+          updatedDate: new Date().toISOString(),
+          active: true,
+          teacher: teachers.find(t => t.idTeacher === formData.id_teacher) || null,
+          students: []
         });
       } else {
-        await classroomService.create(formData);
+        await classroomService.create({
+          ...formData,
+          createdDate: new Date().toISOString(),
+          updatedDate: new Date().toISOString(),
+          active: true,
+          teacher: teachers.find(t => t.idTeacher === formData.id_teacher) || null,
+          students: []
+        });
       }
       navigate('/classrooms');
     } catch (error) {

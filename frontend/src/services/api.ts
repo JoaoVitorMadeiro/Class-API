@@ -2,8 +2,32 @@ import axios from 'axios';
 import { Teacher, Classroom, CreateTeacherDTO, CreateClassroomDTO } from '../types';
 
 const api = axios.create({
-  baseURL: 'http://localhost:8080'
+  baseURL: 'http://localhost:8080',
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
+
+// Interceptor para adicionar o token JWT em todas as requisições
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+// Interceptor para tratar erros de autenticação
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      localStorage.removeItem('token');
+      window.location.href = '/login';
+    }
+    return Promise.reject(error);
+  }
+);
 
 export const teacherService = {
   getAll: async () => {
@@ -55,4 +79,6 @@ export const classroomService = {
   delete: async (id: number) => {
     await api.delete(`/classroom/${id}`);
   }
-}; 
+};
+
+export default api; 

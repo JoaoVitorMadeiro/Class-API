@@ -1,7 +1,31 @@
 export enum Turn {
-  Morning = 'Morning',
-  Afternoon = 'Afternoon',
-  Night = 'Night'
+  Morning = 'MORNING',
+  Afternoon = 'AFTERNOON',
+  Night = 'NIGHT'
+}
+
+export interface User {
+  id: number;
+  name: string;
+  email: string;
+  role: 'ADMIN' | 'TEACHER';
+}
+
+export interface Class {
+  id: number;
+  name: string;
+  turn: Turn;
+  teacherId: number;
+  teacherName: string;
+  studentCount: number;
+}
+
+export interface AttendanceRecord {
+  id: number;
+  classId: number;
+  date: string;
+  presentCount: number;
+  absentCount: number;
 }
 
 export interface Teacher {
@@ -14,11 +38,23 @@ export interface Teacher {
 }
 
 export interface Classroom {
-  id?: number;
+  id: number;
   name_class: string;
-  school_segment: string;
   turn: Turn;
+  school_segment: string;
   id_teacher: number;
+  createdDate: string;
+  updatedDate: string;
+  active: boolean;
+  teacher: Teacher | null;
+  students: Student[];
+}
+
+export interface Student {
+  id: number;
+  name: string;
+  email: string;
+  classroom: Classroom;
 }
 
 export interface CreateTeacherDTO {
@@ -32,4 +68,9 @@ export interface CreateClassroomDTO {
   turn: Turn;
   school_segment: string;
   id_teacher: number;
+  createdDate: string;
+  updatedDate: string;
+  active: boolean;
+  teacher: Teacher | null;
+  students: Student[];
 } 
